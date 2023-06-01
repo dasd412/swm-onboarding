@@ -15,8 +15,11 @@ public class CalculatorController {
         this.calculatorService = calculatorService;
     }
 
+    /*
+    @return 계산의 결괏값
+     */
     @PostMapping("/calculate")
-    public Long calculate(@RequestBody CalculatorDTO calculatorDTO) {
+    public Double calculate(@RequestBody CalculatorDTO calculatorDTO) {
         return calculatorService.calculate(calculatorDTO.getOperandA(), calculatorDTO.getOperandB(), calculatorDTO.getOperator());
     }
 }

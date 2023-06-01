@@ -15,8 +15,11 @@ public class CalculatorService {
         this.calculatorRepository = calculatorRepository;
     }
 
+    /*
+    @return 계산의 결괏값
+     */
     @Transactional
-    public Long calculate(double operandA, double operandB, Operator operator) {
+    public Double calculate(double operandA, double operandB, Operator operator) {
 
         Calculator calculator = new Calculator();
 
@@ -35,6 +38,6 @@ public class CalculatorService {
                 break;
         }
         calculatorRepository.save(calculator);
-        return calculator.getId();
+        return calculator.getResult();
     }
 }

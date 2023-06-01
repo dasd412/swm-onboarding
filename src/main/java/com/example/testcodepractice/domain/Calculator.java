@@ -19,6 +19,10 @@ public class Calculator {
     public Calculator() {
     }
 
+    public Calculator(double result){
+        this.result=result;
+    }
+
     public void add(double operandA, double operandB) {
         this.result = operandA + operandB;
     }
