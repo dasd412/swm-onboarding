@@ -14,7 +14,7 @@ public class Calculator {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private double result;
+    private double result=0.0;
 
     public Calculator() {
     }
@@ -32,6 +32,7 @@ public class Calculator {
     }
 
     public void divide(double operandA, double operandB) {
+        //todo 아래 코드는 operandB==0일 경우, InvalidArgumentException을 던집니다!
         checkArgument(operandB != 0, "operandB must not be zero");
         this.result = operandA / operandB;
     }
